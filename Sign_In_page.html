@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Signin Page</title>
+  
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #009688, #00bcd4);
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .signin-container {
+      background-color: white;
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .signin-container h1 {
+      margin-bottom: 20px;
+      color: #009688;
+      font-size: 2rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      transition: border 0.3s;
+    }
+
+    input:focus {
+      border-color: #00bcd4;
+      outline: none;
+    }
+
+    input::placeholder {
+      color: #aaa;
+    }
+
+    button {
+      width: 100%;
+      background-color: #4caf50;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #43a047;
+    }
+
+    #signinMsg {
+      margin-top: 15px;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 15px;
+      text-decoration: none;
+      color: #009688;
+      font-size: 0.9rem;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media screen and (max-width: 480px) {
+      .signin-container {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+
+  <script src="./sign_In_page.js">  </script>
+</head>
+<body>
+  <div class="signin-container">
+    <h1>Sign In</h1>
+    <input type="text" id="signinUser" placeholder="Username" required>
+    <input type="password" id="signinPass" placeholder="Password" required>
+    <button onclick="signin()"><a href="hello.html"></a> signIn</button>
+    <div id="signinMsg"></div>
+    <a href="./index.html">Don't have an account? Sign up</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+function signup() {
+        const username = document.getElementById("signupUser").value.trim();
+        const password = document.getElementById("signupPass").value;
+        const confirmPassword = document.getElementById("signupConfirmPass").value;
+        const msg = document.getElementById("signupMsg");
+
+        msg.innerHTML = "";
+
+        if (!username || !password || !confirmPassword) {
+          msg.style.color = "red";
+          msg.innerHTML = "Please fill out all fields.";
+          return;
+        }
+
+        if (password.length < 5) {
+          msg.style.color = "red";
+          msg.innerHTML = "Password must be at least 5 characters.";
+          return;
+        }
+
+        if (password !== confirmPassword) {
+          msg.style.color = "red";
+          msg.innerHTML = "Passwords do not match.";
+          return;
+        }
+
+        localStorage.setItem("user_" + username, password);
+        msg.style.color = "green";
+        msg.innerHTML = "Signup successful! Redirecting...";
+        document.getElementById("signupUser").value="";
+        document.getElementById("signupPass").value="";
+        document.getElementById("signupConfirmPass").value="";
+        setTimeout(() => {
+          window.location.href = "./Sign_In_page.html";
+        }, 1500);
+
+      
+      }
